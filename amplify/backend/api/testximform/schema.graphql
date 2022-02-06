@@ -1,6 +1,6 @@
 type Post
 @model
-@auth(rules: [{ allow: public }]) {
+@auth(rules: [{ allow: public, provider: iam }]) {
   id: ID!
   title: String!
   content: String!

@@ -7,7 +7,7 @@ import { createPost } from "../src/graphql/mutations";
 import { listPosts } from "../src/graphql/queries";
 import styles from "../styles/Home.module.css";
 
-Amplify.configure({ ...awsExports, ssr: true, aws_appsync_authenticationType: "API_KEY" });
+Amplify.configure({ ...awsExports, ssr: true, aws_appsync_authenticationType: "AWS_IAM" });
 
 export async function getServerSideProps({ req }) {
   const SSR = withSSRContext({ req });
@@ -27,7 +27,7 @@ async function handleCreatePost(event) {
 
   try {
     const { data } = await API.graphql({
-      authMode: "API_KEY",
+      authMode: "AWS_IAM",
       query: createPost,
       variables: {
         input: {

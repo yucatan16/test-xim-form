@@ -51,7 +51,7 @@ export default function Post({ post }) {
   async function handleDelete() {
     try {
       await API.graphql({
-        authMode: "API_KEY",
+        authMode: "AWS_IAM",
         query: deletePost,
         variables: {
           input: { id: post.id },
