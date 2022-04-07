@@ -48,7 +48,7 @@ export default function Home({ posts = [] }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Amplify + Next.js</title>
+        <title>Amplify + Next.js + Yeah!!!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
